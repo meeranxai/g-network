@@ -65,8 +65,8 @@ if (googleBtn) {
             showStatus(`Welcome ${user.displayName}! Redirecting...`, false);
             
             setTimeout(() => {
-                // FIXED PATH HERE
-                window.location.href = "/G-Network/index.html"; 
+                // ✅ FIXED PATH HERE (Sirf index.html)
+                window.location.href = "index.html"; 
             }, 1500);
 
         } catch (error) {
@@ -103,8 +103,8 @@ if (loginForm) {
             showStatus("Login Successful! Redirecting...", false);
             
             setTimeout(() => {
-                // FIXED PATH HERE TOO
-                window.location.href = "/G-Network/index.html"; 
+                // ✅ FIXED PATH HERE TOO (Sirf index.html)
+                window.location.href = "index.html"; 
             }, 1000);
 
         } catch (error) {
