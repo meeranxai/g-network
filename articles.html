@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-Network - Articles</title>
+  <link rel="stylesheet" href="./css/articles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+  <div class="container header-container">
+
+    <div class="logo">
+      <a href="./index.html" style="text-decoration: none; color: inherit;">
+          <h1>G-Network</h1>
+      </a>
+      <span class="tagline">Your source for tech tutorials & news</span>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./articles.html" class="active">Articles</a>
+      <a href="#">Categories</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      
+      <div class="dropdown">
+        <button class="dropbtn">More</button>
+        <div class="dropdown-content">
+          <a href="#">Events</a>
+          <a href="#">Workshops</a>
+          <a href="#">Community</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-bar">
+      <form class="search-form" style="display: flex;">
+        <input type="search" id="article-search" placeholder="Search articles..." style="border: 1px solid #ccc; padding: 5px; border-radius: 4px 0 0 4px;">
+        <button id="search-btn" type="submit" style="padding: 5px 10px; cursor: pointer;">Search</button>
+      </form>
+    </div>
+
+    <div class="user-profile" id="auth-ui" style="display: flex; align-items: center; gap: 10px;">
+      
+      <div id="logged-out-view">
+        <a href="./login.html" class="btn btn-login" style="padding: 8px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">Login</a>
+      </div>
+
+      <div id="logged-in-view" style="display: none; align-items: center; gap: 10px;">
+          <a href="./profile.html" class="user-profile-trigger" style="display: flex; align-items: center; gap: 8px; cursor: pointer; text-decoration: none; color: #333;">
+              <img id="user-avatar" src="./images/default-avatar.png" alt="Profile" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #007bff; object-fit: cover;">
+              <span id="user-name" style="font-weight: 600; font-size: 14px;">User</span>
+          </a>
+          
+          <button id="logout-btn" style="background: transparent; border: none; color: #666; cursor: pointer; font-size: 16px;" title="Logout">
+              <i class="fas fa-sign-out-alt"></i>
+          </button>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+
+ <section class="hero-articles" aria-label="Introduction">
+  <div class="container hero-wrapper">
+    
+    <div class="hero-content">
+      <span class="hero-subtitle">Knowledge Hub</span>
+      
+      <h1 class="hero-title">Expand Your <span class="text-gradient">Technical Horizons</span></h1>
+      
+      <p class="hero-description">
+        Access a curated library of high-quality tech tutorials, industry insights, and 
+        comprehensive guides designed to take you from beginner to professional.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#articles-container" class="btn btn-primary" style="padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+          Explore Articles
+        </a>
+        <a href="./subscribe.html" class="btn btn-outline-light" style="padding: 10px 20px; border: 1px solid #333; color: #333; text-decoration: none; border-radius: 5px; margin-left: 10px;">
+          Join the Newsletter
+        </a>
+      </div>
+
+      <div class="hero-stats-bar" style="margin-top: 30px; display: flex; gap: 20px;">
+        <div class="stat-item">
+          <span class="stat-number" style="font-weight: bold; font-size: 1.2rem;">50+</span>
+          <span class="stat-label">Tutorials</span>
+        </div>
+        <div class="stat-divider">|</div>
+        <div class="stat-item">
+          <span class="stat-number" style="font-weight: bold; font-size: 1.2rem;">100+</span>
+          <span class="stat-label">Articles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="image-wrapper">
+        <img src="./images/illust.jpg" alt="Tech Knowledge Illustration" class="floating-animation" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="articles-section" aria-labelledby="articles-heading">
+  <div class="container">
+    
+    <div class="section-header">
+      <h2 id="articles-heading">Featured Insights & Tutorials</h2>
+      <p>Explore our latest guides, industry trends, and deep dives into modern web development.</p>
+    </div>
+
+    <div class="articles-container articles-grid" id="articles-container">
+      
+      <article class="article-card">
+        <div class="article-image">
+          <img src="images/java-script.avif" alt="Comprehensive JavaScript Guide" loading="lazy">
+        </div>
+        <div class="article-content">
+          <span class="category-badge">Development</span>
+          <h3>Mastering Modern JavaScript</h3>
+          <p>A comprehensive roadmap to becoming a proficient JS developer.</p>
+          <a href="#" class="btn-link">Read Full Guide</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="section-footer" style="text-align: center; margin-top: 30px;">
+      <button class="btn btn-outline" id="load-more">Browse All Articles</button>
+    </div>
+  </div>
+</section>
+
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    
+    <div class="footer-brand">
+      <a href="./index.html" class="footer-logo">G-Network<span>.</span></a>
+      <p class="brand-description">
+        Empowering developers with high-quality tutorials, industry insights, and a community-driven learning experience.
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="./articles.html">Articles</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get the latest tech news delivered to your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Email address" required>
+        <button type="submit" class="btn-subscribe">Join</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container bottom-flex">
+      <p>&copy; 2025 G-Network. Engineered for the future.</p>
+    </div>
+  </div>
+</footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

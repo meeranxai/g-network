@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join G-Network | Create Account</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/G-Network/css/login.css" /> 
+</head>
+<body>
+
+  <main class="login-container">
+    <section class="login-brand-side">
+      <div class="brand-overlay"></div>
+      <div class="brand-content">
+        <nav class="auth-nav" style="margin-bottom: 40px;">
+          <a href="../G-Network/index.html" class="back-home" style="color: white; text-decoration: none; font-weight: 500;">
+            <i class="fas fa-arrow-left"></i> 
+            <span>Don't want to create account? Back</span>
+          </a>
+        </nav>
+
+        <h1 class="logo-name">G-<span>Network</span></h1>
+        <h2 class="hero-text">Start Your <br>Tech Journey.</h2>
+        <p class="brand-description">Get access to custom roadmaps, connect with senior developers, and build your portfolio with the best resources.</p>
+        
+        <div class="brand-stats">
+            <div class="stat-item"><span class="stat-number">Free</span><p class="stat-label">Forever</p></div>
+            <div class="stat-item"><span class="stat-number">100%</span><p class="stat-label">Secure</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-form-side">
+      <div class="form-box">
+        <header class="form-header">
+          <h2>Create Account</h2>
+          <p>Join the community of 50k+ developers.</p>
+        </header>
+
+        <div id="auth-message" class="auth-message hidden"></div>
+
+        <form id="signup-form">
+          <div class="input-group">
+            <label><i class="fas fa-user"></i> Full Name</label>
+            <div class="input-wrapper">
+              <input type="text" id="username" placeholder="Meeran Khan" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label><i class="fas fa-envelope"></i> Email Address</label>
+            <div class="input-wrapper">
+              <input type="email" id="signup-email" placeholder="name@email.com" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="signup-password" placeholder="Min. 6 characters" required />
+              <button type="button" id="toggle-password" class="password-toggle"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-main-login" id="signup-btn">
+            <span>Create Free Account</span> <i class="fas fa-user-plus"></i>
+          </button>
+
+          <div class="auth-separator"><span>Or sign up with</span></div>
+
+          <div class="social-grid">
+            <button type="button" class="social-btn google-auth">
+              <img src="/G-Network/images/Google_Favicon_2025.svg.webp" alt="G"> Google
+            </button>
+            <button type="button" class="social-btn github-auth">
+              <img src="/G-Network/images/github.png" alt="Git"> GitHub
+            </button>
+          </div>
+
+          <p class="form-footer" style="margin-top: 20px; text-align: center;">
+            Already a member? <a href="/G-Network/log-signup-system/login.html" style="color: #007bff; font-weight: 600;">Log In</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/G-Network/js/firebase.js"></script>
+  <script type="module" src="/G-Network/js/auth.js"></script>
+  <script type="module" src="/G-Network/js/signup.js"></script>
+</body>
+</html>

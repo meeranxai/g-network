@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-Network - Landing Page</title>
+  <link rel="stylesheet" href="/G-Network/css/style.css">
+  
+
+</head>
+      <!-- Firebase SDK -->
+
+      
+
+<body>
+
+ <!-- ================= Header / Navigation ================= -->
+<header>
+  <div class="logo">
+    <a href="./index.html">
+      <img src="./images/logo.png" alt="G-Network Logo" class="logo-img">
+      <span class="logo-text">Network</span>
+    </a>
+  </div>
+
+  <nav class="main-nav">
+    <a href="./index.html" class="active">Home</a>
+    <a href="./articles.html">Articles</a>
+    <a href="#">Categories</a>
+    <a href="#">About</a>
+  </nav>
+
+  <div class="auth-buttons" id="auth-ui">
+    <div id="logged-out-view" style="display: flex; align-items: center; gap: 15px;">
+        <a href="./login.html" class="login-link">Login</a>
+        <a href="./signup.html" class="signup-btn">Get Started</a>
+    </div>
+
+    
+
+    
+    <div id="logged-in-view" style="display: none; align-items: center; gap: 15px;">
+        <a href="./profile.html" class="user-profile-trigger" style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 5px 10px; background: #f0f7ff; border-radius: 50px; text-decoration: none;">
+            <img id="user-avatar" src="./images/default-avatar.png" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid #007bff; object-fit: cover;">
+            <span id="user-name" style="font-weight: 600; color: #333; font-size: 14px;">Loading...</span>
+        </a>
+
+        
+        </a> 
+
+    <a href="./my-articles.html" style="text-decoration: none; color: #007bff; font-size: 14px; padding: 5px 10px; background: #eef; border-radius: 50px; display: flex; align-items: center; gap: 5px; border: 1px solid #cce5ff;">
+    <i class="fas fa-pen"></i> <span>Write</span>
+</a>
+        <button id="logout-btn" style="background: transparent; border: none; color: #666; cursor: pointer; font-size: 18px; transition: 0.3s;" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </div>
+  </div>
+</header>
+</header>
+
+
+
+  <!-- Hero / Banner Section -->
+<section class="hero">
+  <!-- Optional background shapes / decorations -->
+  <div class="hero-shapes">
+    <span class="shape circle"></span>
+    <span class="shape square"></span>
+    <span class="shape triangle"></span>
+  </div>
+
+  <!-- Main content container -->
+  <div class="hero-content">
+    <!-- Heading -->
+    <h2>Welcome to G-Network</h2>
+
+    <!-- Description -->
+    <p>
+      Discover the latest technology news, tutorials, and guides. Stay updated 
+      and improve your coding skills with our curated articles, tips, and insights. 
+      Perfect for beginners and professionals alike.
+    </p>
+
+    <!-- Call to Action Button -->
+    <div class="hero-buttons">
+      <button onclick="window.location.href='/G-Network/articles.html'">Read Latest Articles</button>
+      <button onclick="window.location.href='#subscribe'">Subscribe Now</button>
+    </div>
+
+    <!-- Optional hero image / illustration -->
+    <div class="hero-image">
+      <img src="/G-Network/images/ai.webp" alt="Tech Illustration">
+    </div>
+  </div>
+</section>
+
+
+  <!-- Featured / Latest Articles Section -->
+<section class="latest-articles">
+  <div class="container">
+    <h2>Latest Articles</h2>
+    <div class="articles-container">
+      
+      <!-- Article 1 -->
+      <article class="article-card">
+        <img src="/G-Network/images/java-script.avif" alt="Learn JavaScript">
+        <div class="article-content">
+          <h3>How to Learn JavaScript</h3>
+          <p>Step-by-step guide to becoming proficient in JavaScript.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card">
+        <img src="/G-Network/images/python-tips.webp" alt="Python Tips">
+        <div class="article-content">
+          <h3>Top 10 Python Tips</h3>
+          <p>Boost your Python skills with these practical tips.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card">
+        <img src="/G-Network/images/css.png" alt="HTML & CSS">
+        <div class="article-content">
+          <h3>Understanding HTML & CSS</h3>
+          <p>Learn how to structure and style your web pages effectively.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- Categories Section -->
+<section class="categories">
+  <h2>Categories</h2>
+  <ul>
+    <li><a href="#">JavaScript</a></li>
+    <li><a href="#">Python</a></li>
+    <li><a href="#">Web Development</a></li>
+    <li><a href="#">Machine Learning</a></li>
+    <li><a href="#">AI & Robotics</a></li>
+    <li><a href="#">Data Science</a></li>
+    <li><a href="#">Cybersecurity</a></li>
+    <li><a href="#">Cloud Computing</a></li>
+    <li><a href="#">DevOps</a></li>
+    <li><a href="#">Mobile Development</a></li>
+  </ul>
+</section>
+
+
+  <!-- About Section -->
+<section class="about">
+  <h2>About Tech Blog</h2>
+  <p>
+    Tech Blog is your go-to source for technology tutorials, guides, and news. Stay updated and improve your coding skills with our articles.
+  </p>
+
+  <!-- Optional: Mission Statement -->
+  <div class="about-mission">
+    <h3>Our Mission</h3>
+    <p>To provide easy-to-follow tutorials and insightful articles for learners of all levels in the tech world.</p>
+  </div>
+
+  <!-- Optional: Team Info -->
+  <div class="about-team">
+    <h3>Meet Our Team</h3>
+    <ul>
+      <li>Meeran Rafiq - Founder & Editor</li>
+      <!-- <li>Meeran Rafiq - Content Writer</li>
+      <li>Meeran Rafiq - Web Developer</li> -->
+    </ul>
+  </div>
+
+  <!-- Optional: Values / Why Choose Us -->
+  <div class="about-values">
+    <h3>Why Choose Tech Blog?</h3>
+    <ul>
+      <li>Expert-written articles</li>
+      <li>Step-by-step tutorials</li>
+      <li>Regular updates on latest tech trends</li>
+      <li>Friendly and easy-to-understand content</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Newsletter / Subscribe Section -->
+<section class="subscribe">
+  <div class="subscribe-container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get the latest articles delivered straight to your inbox.</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <!-- Optional: Benefits / Highlights under the form -->
+    <div class="subscribe-benefits">
+      <ul>
+        <li>Latest tech news</li>
+        <li>Weekly tutorials</li>
+        <li>Exclusive guides</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <!-- About / Brand Column -->
+    <div class="footer-column">
+      <h3>G-Network</h3>
+      <p>Your go-to source for technology tutorials, guides, and news. Stay updated and improve your coding skills with our articles.</p>
+    </div>
+
+    <!-- Quick Links Column -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/G-Network/articles.html">Articles</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources Column -->
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Python Tutorials</a></li>
+        <li><a href="#">JavaScript Guides</a></li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Machine Learning</a></li>
+        <li><a href="#">AI & Robotics</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow / Social Column -->
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <p>
+        <a href="#">Twitter</a><br>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">LinkedIn</a>
+      </p>
+    </div>
+
+    <!-- Newsletter Signup Column -->
+    <div class="footer-column">
+      <h3>Subscribe</h3>
+      <p>Get the latest updates directly to your inbox.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 G-Network. All rights reserved.</p>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script type="module" src="/G-Network/js/main.js"></script>
+<script type="module" src="./js/index.js"></script>
+
+</body>
+
+<!-- <script type="module" src="/G-Network/js/firebase.js"></script>
+<script type="module" src="/G-Network/js/main.js"></script> -->
+
+
+</html>

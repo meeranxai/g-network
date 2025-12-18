@@ -1,0 +1,442 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Dashboard Layout */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 280px;
+    background-color: #0f172a; /* Dark Blue */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 3rem;
+}
+
+.user-preview {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.avatar-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #3b82f6;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+}
+
+.camera-icon:hover {
+    transform: scale(1.1);
+}
+
+.user-preview h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.user-preview p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Navigation Links */
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.side-nav a, .btn-logout {
+    text-decoration: none;
+    color: #cbd5e1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.side-nav a:hover, .side-nav a.active {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.btn-logout {
+    color: #ef4444; /* Red for logout */
+    margin-top: 1rem;
+}
+
+.btn-logout:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* --- Main Content --- */
+.content-area {
+    margin-left: 280px; /* Same as sidebar width */
+    flex: 1;
+    padding: 2rem 3rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stat-card i {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    background: #eff6ff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.stat-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Profile Grid (Form + Side Info) */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Form is wider */
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+}
+
+.card-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.input-group input, .input-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.social-inputs {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.icon-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon-input i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e8f0;
+    border-radius: 6px 0 0 6px;
+    color: #475569;
+}
+
+.icon-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    outline: none;
+}
+
+.btn-save {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #2563eb;
+}
+
+/* Side Info Cards */
+.side-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge.verified { background: #dcfce7; color: #166534; }
+.badge.disabled { background: #fee2e2; color: #991b1b; }
+
+.btn-secondary {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.6rem;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.membership-card {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.membership-card i {
+    font-size: 1.5rem;
+    color: #fbbf24; /* Gold */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dashboard-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; height: auto; }
+    .content-area { margin-left: 0; padding: 1rem; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+/* =========================================
+   CROP MODAL STYLES (Ye Missing Tha)
+   ========================================= */
+
+/* 1. Hide karne ke liye helper class */
+.hidden {
+    display: none !important;
+}
+
+/* 2. Black Background Overlay */
+.modal-overlay {
+    position: fixed; /* Screen par fix rahe */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark transparent bg */
+    z-index: 9999; /* Sidebar se upar dikhane ke liye high value */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Thoda blur effect peeche */
+}
+
+/* 3. White Box (Card) */
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+/* 4. Image Container for Cropper JS */
+.img-container {
+    height: 350px; /* Height fix hona zaroori hai */
+    width: 100%;
+    background: #f8fafc;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px dashed #e2e8f0;
+    display: flex;           /* Image center karne ke liye */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image ko box ke andar fit karein */
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Cropper JS requirement */
+}
+
+/* 5. Buttons Styling */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Buttons ko thoda sunder banayein */
+.btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: auto; /* Purana width 100% overwrite */
+    margin-top: 0;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+/* Animation (Optional - Smooth entry ke liye) */
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

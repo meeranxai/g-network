@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | G-Network</title>
+    <link rel="stylesheet" href="/G-Network/css/style.css">
+    <style>
+        .admin-panel {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .admin-panel h2 { margin-bottom: 20px; color: #333; }
+        .admin-form { display: grid; gap: 15px; }
+        .admin-form input, .admin-form textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .publish-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .publish-btn:disabled { background: #ccc; }
+    </style>
+</head>
+<body>
+
+    <section class="admin-panel">
+        <a href="index.html" style="text-decoration: none; color: #666; font-size: 14px;">← Back to Home</a>
+        <h2>Add New Article (Admin Only)</h2>
+        
+        <form id="add-article-form" class="admin-form">
+            <input type="text" id="art-title" placeholder="Article Title" required>
+            <input type="text" id="art-category" placeholder="Category (e.g., JavaScript)" required>
+            <textarea id="art-desc" placeholder="Short Description" required style="height: 100px;"></textarea>
+            <input type="text" id="art-link" placeholder="Article Page Link (e.g., articles/js-guide.html)">
+            <button type="submit" class="publish-btn">Publish Article</button>
+        </form>
+    </section>
+
+    <script type="module" src="/G-Network/js/admin.js"></script>
+</body>
+</html>
