@@ -2,6 +2,84 @@
    G-NETWORK / TECH BLOG - MASTER STYLESHEET
    ========================================================================== */
 
+/* =========================================
+   MOBILE RESPONSIVE RULES (Max Width 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+  /* 1. Header ko theek karein (Stack vertically) */
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 2. Hero Section (Text upar, Image neeche) */
+  .hero-content {
+    flex-direction: column; /* Side-by-side se hata kar upar-neeche karein */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero h2 {
+    font-size: 2rem; /* Heading thodi chhoti */
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-image img {
+    width: 80%; /* Image screen se bahar na jaye */
+    margin-top: 20px;
+  }
+
+  /* 3. Articles & Grid (Ek ke neeche ek card) */
+  .articles-container {
+    grid-template-columns: 1fr; /* Sirf 1 column */
+    padding: 10px;
+  }
+
+  .article-card {
+    margin-bottom: 20px;
+  }
+
+  /* 4. Footer (Center align) */
+  .footer-container {
+    grid-template-columns: 1fr; /* Sab kuch ek line mein */
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 30px;
+  }
+}
+
 /* 1. Design Tokens & Root Variables */
 :root {
   --primary: #2563eb;
@@ -1693,4 +1771,5 @@ body {
         width: 100%;
         justify-content: center;
     }
+
 }
