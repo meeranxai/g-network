@@ -2,84 +2,6 @@
    G-NETWORK / TECH BLOG - MASTER STYLESHEET
    ========================================================================== */
 
-/* =========================================
-   MOBILE RESPONSIVE RULES (Max Width 768px)
-   ========================================= */
-@media screen and (max-width: 768px) {
-
-  /* 1. Header ko theek karein (Stack vertically) */
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .main-nav a {
-    font-size: 14px;
-    padding: 5px;
-  }
-
-  .auth-buttons {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* 2. Hero Section (Text upar, Image neeche) */
-  .hero-content {
-    flex-direction: column; /* Side-by-side se hata kar upar-neeche karein */
-    text-align: center;
-    padding: 20px;
-  }
-
-  .hero h2 {
-    font-size: 2rem; /* Heading thodi chhoti */
-  }
-
-  .hero p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .hero-image img {
-    width: 80%; /* Image screen se bahar na jaye */
-    margin-top: 20px;
-  }
-
-  /* 3. Articles & Grid (Ek ke neeche ek card) */
-  .articles-container {
-    grid-template-columns: 1fr; /* Sirf 1 column */
-    padding: 10px;
-  }
-
-  .article-card {
-    margin-bottom: 20px;
-  }
-
-  /* 4. Footer (Center align) */
-  .footer-container {
-    grid-template-columns: 1fr; /* Sab kuch ek line mein */
-    text-align: center;
-  }
-
-  .footer-column {
-    margin-bottom: 30px;
-  }
-}
-
 /* 1. Design Tokens & Root Variables */
 :root {
   --primary: #2563eb;
@@ -123,43 +45,28 @@ body {
 }
 
 /* ==========================================================================
-   3. PREMIUM HEADER SECTION STYLING (EXPANDED)
+   3. PREMIUM HEADER SECTION STYLING
    ========================================================================== */
 
 .header {
-    /* Pure white ki jagah thoda translucent background modern lagta hai */
     background: rgba(255, 255, 255, 0.85);
-    
-    /* Modern Glassmorphism: Background content ko blur karega */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
-    /* Subtle border instead of a harsh line */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    
-    /* Sticky behavior with smooth transition */
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    /* Transition for scroll animations (e.g., shrinking on scroll) */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Depth: Modern soft shadow */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    
-    /* Padding balance: Vertical 0.8rem for compact premium look */
     padding: 0.8rem 0;
 }
 
-/* Header state when scrolling (Agar aap JS use karein) */
 .header.header-scrolled {
     padding: 0.5rem 0;
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Container inside header for alignment */
 .header .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -169,26 +76,11 @@ body {
     align-items: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header {
-        padding: 0.6rem 0;
-        /* Mobile par blur thoda kam taake performance behtar rahe */
-        backdrop-filter: blur(8px);
-    }
-}
-
-/* ==========================================================================
-   4. PREMIUM ANNOUNCEMENT BAR & CONTAINER (EXPANDED)
-   ========================================================================== */
-
-/* Latest Updates Bar (The Announcement Strip) */
+/* Announcement Bar */
 .header-extra {
-    /* Rich Gradient instead of flat dark background */
     background: linear-gradient(90deg, #0f172a, #1e3c72, #0f172a);
     background-size: 200% auto;
-    animation: shine 5s linear infinite; /* Subtle moving light effect */
-    
+    animation: shine 5s linear infinite;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
     padding: 10px 0;
@@ -201,56 +93,27 @@ body {
     z-index: 1001;
 }
 
-/* Background Shine Animation */
 @keyframes shine {
     to { background-position: 200% center; }
 }
 
 .header-extra span {
-    color: #ffd700; /* Gold highlight for the "NEW" or "UPDATE" text */
+    color: #ffd700;
     margin-right: 8px;
 }
 
-/* Main Header Container */
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 5%; /* Fluid padding for better edge-to-edge look */
+    padding: 18px 5%;
     max-width: 1440px;
     margin: 0 auto;
-    gap: 30px; /* Better breathing space between logo and nav */
+    gap: 30px;
     transition: padding 0.3s ease;
 }
 
-/* Flex-wrap logic refined for better control */
-@media (max-width: 1024px) {
-    .header-container {
-        padding: 15px 3%;
-        gap: 15px;
-    }
-}
-
-/* Mobile Premium Layout */
-@media (max-width: 768px) {
-    .header-extra {
-        font-size: 0.75rem;
-        padding: 8px 15px;
-        line-height: 1.4;
-    }
-
-    .header-container {
-        padding: 12px 20px;
-        /* Mobile par wrap control: Logo aur Menu icon ko ek line mein rakhne ke liye */
-        flex-wrap: nowrap; 
-    }
-}
-
-/* ==========================================================================
-   5. LOGO & NAVIGATION (PREMIUM EXPANSION)
-   ========================================================================== */
-
-/* --- Logo & Branding --- */
+/* Logo */
 .logo {
     display: flex;
     flex-direction: column;
@@ -260,17 +123,16 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.02); /* Subtle pulse on hover */
+    transform: scale(1.02);
 }
 
 .logo h1 {
     font-size: 1.6rem;
-    font-weight: 900; /* Extra bold for strong brand presence */
+    font-weight: 900;
     color: var(--primary);
-    letter-spacing: -1.5px; /* Tight tracking for modern tech look */
+    letter-spacing: -1.5px;
     line-height: 1;
     margin: 0;
-    /* Gradient text effect (Optional) */
     background: linear-gradient(135deg, var(--primary), #1e3c72);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -287,11 +149,11 @@ body {
     opacity: 0.8;
 }
 
-/* --- Main Navigation --- */
+/* Nav */
 .nav {
     display: flex;
     align-items: center;
-    gap: 8px; /* Gap kam karke padding barhayi hai clickability ke liye */
+    gap: 8px;
 }
 
 .nav a {
@@ -300,18 +162,16 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     padding: 10px 16px;
-    border-radius: 10px; /* Modern soft corners */
+    border-radius: 10px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative; /* For underline effect */
+    position: relative;
 }
 
-/* Hover State: Subtle Background & Text Color */
 .nav a:hover {
     color: var(--primary);
     background: rgba(37, 99, 235, 0.08);
 }
 
-/* Active State: Indicator Line */
 .nav a.active {
     color: var(--primary);
     background: rgba(37, 99, 235, 0.05);
@@ -328,7 +188,6 @@ body {
     border-radius: 10px;
 }
 
-/* Search/Action Buttons inside Nav (If any) */
 .nav-actions {
     display: flex;
     align-items: center;
@@ -338,24 +197,11 @@ body {
     gap: 15px;
 }
 
-/* Responsive Fixes */
-@media (max-width: 1024px) {
-    .nav {
-        display: none; /* Desktop menu hide on Tablet/Mobile to show Hamburger */
-    }
-}
+/* Dropdown */
+.dropdown { position: relative; }
 
-/* ==========================================================================
-   6. PREMIUM DROPDOWN NAVIGATION (EXPANDED)
-   ========================================================================== */
-
-.dropdown { 
-    position: relative; 
-}
-
-/* --- Dropdown Button --- */
 .dropbtn {
-    background: rgba(37, 99, 235, 0.03); /* Extremely subtle tint */
+    background: rgba(37, 99, 235, 0.03);
     border: 1px solid var(--border);
     padding: 10px 20px;
     border-radius: 12px;
@@ -369,7 +215,6 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Adding a custom CSS arrow */
 .dropbtn::after {
     content: '▼';
     font-size: 0.6rem;
@@ -385,36 +230,28 @@ body {
 }
 
 .dropdown:hover .dropbtn::after {
-    transform: rotate(180deg); /* Arrow flips on hover */
+    transform: rotate(180deg);
     opacity: 1;
 }
 
-/* --- Dropdown Content (The Menu) --- */
 .dropdown-content {
-    display: block; /* Hum 'display' ki jagah 'opacity' aur 'visibility' use karenge for animation */
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 120%; /* Thoda niche se start hoga transition ke liye */
+    top: 120%;
     left: 0;
-    background: var(--white);
-    min-width: 220px; /* Thoda wide for premium feel */
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    
-    /* Advanced layered shadow */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 
-                0 1px 3px rgba(0, 0, 0, 0.02);
-    
+    min-width: 220px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     padding: 10px;
     z-index: 100;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transform: translateY(10px); /* Slide-up effect ki starting position */
+    transform: translateY(10px);
 }
 
-/* Hover State Reveal */
 .dropdown:hover .dropdown-content { 
     visibility: visible;
     opacity: 1;
@@ -422,7 +259,6 @@ body {
     transform: translateY(0);
 }
 
-/* --- Dropdown Links --- */
 .dropdown-content a { 
     display: flex;
     align-items: center;
@@ -438,52 +274,32 @@ body {
 .dropdown-content a:hover {
     background: rgba(37, 99, 235, 0.06);
     color: var(--primary);
-    padding-left: 20px; /* Subtle slide-right effect on hover */
+    padding-left: 20px;
 }
 
-/* Optional: Adding a small indicator triangle at the top */
-.dropdown-content::before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: 20px;
-    width: 12px;
-    height: 12px;
-    background: var(--white);
-    transform: rotate(45deg);
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* ==========================================================================
-   7. PREMIUM SEARCH BAR (EXPANDED & DYNAMIC)
-   ========================================================================== */
-
+/* Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
-    background: #f1f5f9; /* Slate-50: Professional light grey */
+    background: #f1f5f9;
     border: 1.5px solid rgba(0, 0, 0, 0.05);
-    border-radius: 12px; /* Thode soft corners for premium feel */
+    border-radius: 12px;
     padding: 5px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
 }
 
-/* Hover effect on the whole bar */
 .search-bar:hover {
     border-color: rgba(37, 99, 235, 0.2);
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Focus State: Pura bar expand hoga aur glow karega */
 .search-bar:focus-within {
     background: #ffffff;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), 
-                0 10px 20px rgba(0, 0, 0, 0.05);
-    width: 250px; /* Desktop par expand hone ka effect */
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+    width: 250px;
 }
 
 .search-bar input {
@@ -491,7 +307,7 @@ body {
     background: none;
     padding: 10px 15px;
     outline: none;
-    width: 180px; /* Default width */
+    width: 180px;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1e293b;
@@ -504,10 +320,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Focus par placeholder ko halka sa gayab karna premium touch hai */
-.search-bar input:focus::placeholder {
-    opacity: 0.5;
-}
+.search-bar input:focus::placeholder { opacity: 0.5; }
 
 .search-bar button {
     background: var(--primary);
@@ -527,148 +340,30 @@ body {
 }
 
 .search-bar button:hover {
-    background: #1d4ed8; /* Darker blue on hover */
+    background: #1d4ed8;
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
-.search-bar button:active {
-    transform: scale(0.98); /* Click karne par "press" effect */
-}
-
-/* ================== Responsive Search ================== */
-@media (max-width: 768px) {
-    .search-bar {
-        width: 100%; /* Mobile par full width */
-        margin-top: 10px;
-    }
-    
-    .search-bar:focus-within {
-        width: 100%; /* Mobile par expansion ki zaroorat nahi */
-    }
-
-    .search-bar input {
-        width: 100%;
-    }
-}
-
-/* ==========================================================================
-   8. PREMIUM HEADER CTAs & USER PROFILE (EXPANDED)
-   ========================================================================== */
-
 .header-cta, .user-profile {
     display: flex;
     align-items: center;
-    gap: 12px; /* Balanced spacing */
+    gap: 12px;
     margin-left: 10px;
 }
 
-/* --- Premium Buttons Styling --- */
-.header-cta .btn {
-    padding: 10px 22px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Primary CTA (e.g., Subscribe/Join) */
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary), #1e4ed8);
-    color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-    filter: brightness(1.1);
-}
-
-/* Secondary CTA (e.g., Login/Sign In) */
-.btn-secondary {
-    background: transparent;
-    color: var(--text-main);
-    border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-    background: #f8fafc;
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-/* --- User Profile Section --- */
-.user-profile {
-    padding-left: 15px;
-    border-left: 1px solid var(--border); /* Separation from nav */
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px var(--primary); /* Premium double-border effect */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.user-avatar:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-name {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-main);
-    line-height: 1.2;
-}
-
-.user-role {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
-    .user-info {
-        display: none; /* Mobile/Tablet par sirf avatar dikhega space bachane ke liye */
-    }
-}
-
-@media (max-width: 640px) {
-    .header-cta {
-        display: none; /* Mobile par buttons ko Hamburger menu ke andar rakha jata hai */
-    }
-}
 /* ==========================================================================
-   4. ULTRA-PREMIUM HERO SECTION (EXPANDED)
+   4. ULTRA-PREMIUM HERO SECTION
    ========================================================================== */
 
 .hero-articles {
-    /* Sophisticated Depth Gradient */
     background: radial-gradient(circle at 80% 20%, #3b82f6 0%, #1e40af 45%, #0f172a 100%);
     color: #ffffff;
-    padding: 140px 0 100px 0; /* Extra top padding for header breathing room */
+    padding: 140px 0 100px 0;
     overflow: hidden;
     position: relative;
 }
 
-/* Background Abstract Decoration (Premium Feel) */
 .hero-articles::before {
     content: "";
     position: absolute;
@@ -703,10 +398,9 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    perspective: 1000px; /* For 3D floating effect */
+    perspective: 1000px;
 }
 
-/* Floating Animation for Visuals */
 .hero-visual img {
     width: 100%;
     max-width: 500px;
@@ -715,7 +409,6 @@ body {
     animation: float 6s ease-in-out infinite;
 }
 
-/* Typography Enhancements */
 .hero-subtitle {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
@@ -727,12 +420,12 @@ body {
     letter-spacing: 2px;
     font-size: 0.75rem;
     font-weight: 800;
-    color: #ffd700; /* Gold/Accent */
+    color: #ffd700;
     margin-bottom: 20px;
 }
 
 .hero-title {
-    font-size: 4.5rem; /* Larger for impact */
+    font-size: 4.5rem;
     font-weight: 900;
     line-height: 1.05;
     margin: 10px 0 25px 0;
@@ -756,8 +449,6 @@ body {
     font-weight: 400;
 }
 
-/* --- Animations --- */
-
 @keyframes float {
     0% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(2deg); }
@@ -773,80 +464,41 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ================== Responsive Hero ================== */
-@media (max-width: 1100px) {
-    .hero-title { font-size: 3.5rem; }
-    .hero-wrapper { gap: 40px; }
-}
-
-@media (max-width: 768px) {
-    .hero-articles { padding: 100px 20px 60px 20px; }
-    
-    .hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-title { font-size: 2.8rem; }
-    
-    .hero-description {
-        margin: 0 auto 35px auto;
-        font-size: 1.1rem;
-    }
-
-    .hero-visual { margin-top: 50px; }
-}
-
-/* ==========================================================================
-   PREMIUM HERO STATS BAR (EXPANDED)
-   ========================================================================== */
-
+/* Stats Bar */
 .hero-stats-bar {
     display: flex;
     align-items: center;
-    gap: 40px; /* Thoda airy gap for premium feel */
-    background: rgba(255, 255, 255, 0.07); /* Thinner glass effect */
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.07);
     padding: 25px 40px;
-    border-radius: 24px; /* Softer modern corners */
-    backdrop-filter: blur(15px); /* Stronger blur for better readability */
+    border-radius: 24px;
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    
     width: fit-content;
-    border: 1px solid rgba(255, 255, 255, 0.12); /* Subtle glass border */
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    
-    margin-top: 40px; /* Hero content se distance */
+    margin-top: 40px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Hover effect: Box shines and lifts */
 .hero-stats-bar:hover {
     transform: translateY(-8px) scale(1.02);
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 
-                0 0 20px rgba(59, 130, 246, 0.2); /* Subtle blue glow */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
-/* Individual Stat Container */
-.stat-item {
-    text-align: left;
-    transition: transform 0.3s ease;
-}
-
-.hero-stats-bar:hover .stat-item {
-    transform: translateX(5px);
-}
+.stat-item { text-align: left; transition: transform 0.3s ease; }
+.hero-stats-bar:hover .stat-item { transform: translateX(5px); }
 
 .stat-number { 
-    font-size: 1.8rem; /* Slightly larger for impact */
+    font-size: 1.8rem;
     font-weight: 900; 
     display: block; 
     color: #ffffff;
     letter-spacing: -1px;
     line-height: 1;
     margin-bottom: 5px;
-    /* Gold/Accent color for numbers can be added here */
 }
 
 .stat-label { 
@@ -855,35 +507,15 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #cbd5e1; /* Slate color for premium readability */
+    color: #cbd5e1;
 }
 
-/* Custom Animated Divider */
 .stat-divider { 
     width: 2px; 
     height: 45px; 
     background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent); 
     border: none;
 }
-
-/* Responsive Scaling */
-@media (max-width: 768px) {
-    .hero-stats-bar {
-        gap: 20px;
-        padding: 20px;
-        width: 100%;
-        justify-content: space-around;
-        border-radius: 16px;
-    }
-
-    .stat-number { font-size: 1.4rem; }
-    .stat-label { font-size: 0.7rem; }
-    .stat-divider { height: 30px; }
-}
-
-/* ==========================================================================
-   PREMIUM HERO VISUAL & MORPHING BLOBS (EXPANDED)
-   ========================================================================== */
 
 .image-wrapper { 
     position: relative; 
@@ -894,7 +526,6 @@ body {
     align-items: center;
 }
 
-/* Glass Frame for the Image (Optional but Premium) */
 .image-wrapper::after {
     content: "";
     position: absolute;
@@ -903,7 +534,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
     z-index: -1;
-    transform: rotate(-3deg); /* Artistic tilt */
+    transform: rotate(-3deg);
 }
 
 .hero-shape-blob {
@@ -912,15 +543,13 @@ body {
     right: -15%;
     width: 500px; 
     height: 500px;
-    /* Multi-layered gradient for depth */
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(147, 51, 234, 0.3));
     filter: blur(60px);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Irregular Shape */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     z-index: -1;
     animation: morphing 10s ease-in-out infinite alternate, spinning 20s linear infinite;
 }
 
-/* Secondary Blob for extra complexity */
 .image-wrapper::before {
     content: "";
     position: absolute;
@@ -928,46 +557,31 @@ body {
     left: -10%;
     width: 300px; 
     height: 300px;
-    background: rgba(250, 204, 21, 0.2); /* Soft Yellow/Gold glow */
+    background: rgba(250, 204, 21, 0.2);
     filter: blur(80px);
     border-radius: 50%;
     z-index: -1;
     animation: pulse 8s ease-in-out infinite;
 }
 
-/* --- Sophisticated Animations --- */
-
-/* Morphing: Blob apni shape dher-dhire badalta hai */
 @keyframes morphing {
     0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
     50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
     100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 }
 
-/* Spinning: Slow rotation for atmospheric feel */
 @keyframes spinning {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* Pulse: Soft breathing effect */
 @keyframes pulse {
     0%, 100% { transform: scale(1); opacity: 0.5; }
     50% { transform: scale(1.2); opacity: 0.8; }
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .hero-shape-blob {
-        width: 300px;
-        height: 300px;
-        top: 0;
-        right: 0;
-    }
-}
-
 /* ==========================================================================
-   5. UNIVERSAL BUTTON DESIGN SYSTEM (EXPANDED)
+   5. BUTTON DESIGN SYSTEM
    ========================================================================== */
 
 .btn {
@@ -975,8 +589,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 28px; /* Slightly larger for premium touch */
-    border-radius: 12px; /* Modern "Squircle" corners */
+    padding: 14px 28px;
+    border-radius: 12px;
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
@@ -988,7 +602,6 @@ body {
     white-space: nowrap;
 }
 
-/* --- Primary Button: The "Power" Action --- */
 .btn-primary { 
     background: linear-gradient(135deg, var(--primary), #1e4ed8);
     color: white;
@@ -1001,7 +614,6 @@ body {
     box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* --- Secondary Button: The "Neutral" Action --- */
 .btn-secondary { 
     background: #ffffff; 
     color: var(--text-main); 
@@ -1016,7 +628,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- Outline Light: For Dark Backgrounds (Hero) --- */
 .btn-outline-light { 
     border: 2px solid rgba(255, 255, 255, 0.4); 
     color: white; 
@@ -1031,7 +642,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* --- Login Button: Clean & Bold Text --- */
 .btn-login { 
     color: var(--primary); 
     font-weight: 800;
@@ -1044,42 +654,15 @@ body {
     background: rgba(37, 99, 235, 0.05);
 }
 
-/* --- Micro-Interactions (Global for all buttons) --- */
-.btn:active {
-    transform: translateY(0) scale(0.96); /* "Push" effect on click */
-}
-
-/* Ripple effect placeholder (Can be triggered with JS) */
-.btn::after {
-    content: "";
-    position: absolute;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
-    background: rgba(255, 255, 255, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.btn:active::after {
-    opacity: 1;
-}
-
-/* Responsive Button scale */
-@media (max-width: 768px) {
-    .btn {
-        padding: 12px 22px;
-        font-size: 0.9rem;
-        width: 100%; /* Mobile par full width buttons aksar behtar hote hain */
-    }
-}
+.btn:active { transform: translateY(0) scale(0.96); }
 
 /* ==========================================================================
-   6. PREMIUM ARTICLES GRID SYSTEM (EXPANDED)
+   6. PREMIUM ARTICLES GRID SYSTEM
    ========================================================================== */
 
 .articles-section { 
     padding: 100px 5%; 
-    background: #fcfcfd; /* Extremely light grey to make white cards "pop" */
+    background: #fcfcfd;
 }
 
 .section-header { 
@@ -1096,7 +679,6 @@ body {
     margin-bottom: 15px; 
 }
 
-/* Subtle decorative line under section title */
 .section-header::after {
     content: "";
     display: block;
@@ -1109,25 +691,23 @@ body {
 
 .articles-grid {
     display: grid;
-    /* Minmax range improved for better scaling */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 40px; /* Airy gap for breathing room */
+    gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .article-card {
     background: #ffffff;
-    border-radius: 24px; /* Smoother modern corners */
+    border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.04); /* Almost invisible border */
+    border: 1px solid rgba(0, 0, 0, 0.04);
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-/* Luxury Lift & Glow Effect */
 .article-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
@@ -1148,10 +728,9 @@ body {
 }
 
 .article-card:hover .article-image img { 
-    transform: scale(1.1); /* Deep zoom effect */
+    transform: scale(1.1); 
 }
 
-/* Badge with Glassmorphism */
 .category-badge {
     position: absolute;
     top: 20px; left: 20px;
@@ -1185,7 +764,6 @@ body {
     font-weight: 600;
 }
 
-/* Time-to-read indicator */
 .article-meta span::before {
     content: "•";
     margin-right: 5px;
@@ -1202,10 +780,9 @@ body {
 }
 
 .article-card:hover h3 {
-    color: var(--primary); /* Title color change on hover */
+    color: var(--primary);
 }
 
-/* Link Button with Animated Arrow */
 .btn-link { 
     margin-top: auto;
     color: var(--primary); 
@@ -1226,26 +803,18 @@ body {
     transform: translateX(8px);
 }
 
-/* ================== Responsive Adjustments ================== */
-@media (max-width: 768px) {
-    .articles-section { padding: 60px 20px; }
-    .section-header h2 { font-size: 2.2rem; }
-    .articles-grid { gap: 25px; }
-}
-
 /* ==========================================================================
-   7. ULTRA-PREMIUM SITE FOOTER (EXPANDED)
+   7. ULTRA-PREMIUM SITE FOOTER
    ========================================================================== */
 
 .site-footer {
-    background: #0f172a; /* Deep tech navy */
+    background: #0f172a;
     color: #94a3b8;
-    padding: 100px 5% 0; /* More top padding for breathing space */
+    padding: 100px 5% 0;
     position: relative;
     overflow: hidden;
 }
 
-/* Subtle accent glow in the background */
 .site-footer::before {
     content: "";
     position: absolute;
@@ -1259,7 +828,6 @@ body {
 
 .footer-grid {
     display: grid;
-    /* Adjusted ratios for better content flow */
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 60px;
     padding-bottom: 80px;
@@ -1269,7 +837,6 @@ body {
     z-index: 1;
 }
 
-/* --- Brand Column --- */
 .footer-logo { 
     font-size: 2rem; 
     font-weight: 900; 
@@ -1289,487 +856,126 @@ body {
     margin: 25px 0; 
     font-size: 1rem; 
     line-height: 1.8; 
-    color: #64748b; /* Slate-400 for better hierarchy */
+    color: #64748b; 
     max-width: 320px;
 }
 
-/* --- Social Links (Modern Circle Style) --- */
 .social-links { 
     display: flex; 
     gap: 12px; 
 }
 
 .social-links a { 
-    width: 44px; height: 44px; 
-    background: rgba(255, 255, 255, 0.03); 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    border-radius: 12px; /* Modern squircle instead of circle */
-    color: #94a3b8; 
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.social-links a:hover { 
-    background: var(--primary); 
-    color: white; 
-    transform: translateY(-5px) rotate(8deg);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
-    border-color: var(--primary);
-}
-
-/* --- Navigation Links --- */
-.footer-links h4 { 
-    color: #ffffff; 
-    margin-bottom: 30px; 
-    font-size: 1.1rem; 
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-links ul { 
-    list-style: none; 
-    padding: 0;
-}
-
-.footer-links li { 
-    margin-bottom: 14px; 
-}
-
-.footer-links a { 
-    color: #94a3b8; 
-    text-decoration: none; 
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease; 
-    display: inline-block;
-}
-
-.footer-links a:hover { 
-    color: #ffffff; 
-    padding-left: 10px; /* Stronger slide effect */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Add a bullet on hover */
-.footer-links a:hover::before {
-    content: "›";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 640px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .social-links { justify-content: center; }
-    
-    .brand-description { margin: 25px auto; }
-    
-    .footer-links a:hover { padding-left: 0; } /* Remove slide on mobile */
-}
-
-/* ==========================================================================
-   FOOTER NEWSLETTER FORM (PREMIUM EXPANSION)
-   ========================================================================== */
-
-.newsletter-form { 
-    display: flex; 
-    flex-direction: column; /* Mobile-first vertical approach */
-    gap: 12px; 
-    margin-top: 25px; 
-    position: relative;
-    max-width: 350px;
-}
-
-/* Input Wrapper for potential icon support */
-.newsletter-form input {
-    width: 100%;
-    background: rgba(30, 41, 59, 0.7); /* Translucent slate */
-    border: 1px solid rgba(51, 65, 85, 0.8);
-    padding: 14px 18px; 
-    border-radius: 12px; /* Modern squircle corners */
-    color: #ffffff; 
-    font-size: 0.95rem;
-    outline: none;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Input Focus Glow */
-.newsletter-form input:focus {
-    background: #1e293b;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15), 
-                inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.newsletter-form input::placeholder {
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-/* Subscribe Button Styling */
-.btn-subscribe { 
-    background: linear-gradient(135deg, var(--primary), #1d4ed8);
-    color: white; 
-    border: none; 
-    padding: 14px 25px; 
-    border-radius: 12px; 
-    cursor: pointer; 
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.btn-subscribe:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-    filter: brightness(1.1);
-}
-
-.btn-subscribe:active {
-    transform: translateY(0) scale(0.97); /* Tactile click feel */
-}
-
-/* --- Inline Layout for Larger Screens --- */
-@media (min-width: 1200px) {
-    .newsletter-form {
-        flex-direction: row;
-        max-width: 100%;
-    }
-    
-    .newsletter-form input {
-        flex: 1;
-    }
-    
-    .btn-subscribe {
-        width: auto;
-    }
-}
-
-/* Responsive Fix for Footer Alignments */
-@media (max-width: 640px) {
-    .newsletter-form {
-        margin: 25px auto 0;
-        text-align: center;
-    }
-}
-
-/* ==========================================================================
-   FOOTER BOTTOM & SYSTEM STATUS (EXPANDED)
-   ========================================================================== */
-
-.footer-bottom { 
-    border-top: 1px solid rgba(255, 255, 255, 0.05); 
-    padding: 35px 5%; 
-    font-size: 0.85rem; /* Slightly smaller for elegance */
-    color: #64748b;
-    background: rgba(0, 0, 0, 0.1); /* Subtle dark contrast from main footer */
-}
-
-.bottom-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 1400px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Safety for small screens */
-    gap: 20px;
-}
-
-/* --- System Status (The Trust Signal) --- */
-.system-status { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    background: rgba(16, 185, 129, 0.05); /* Very light green tint */
-    padding: 8px 16px;
-    border-radius: 50px;
-    border: 1px solid rgba(16, 185, 129, 0.1);
-    transition: all 0.3s ease;
-}
-
-.system-status:hover {
-    background: rgba(16, 185, 129, 0.1);
-    transform: translateY(-2px);
-}
-
-.status-indicator { 
-    width: 8px; 
-    height: 8px; 
-    background: #10b981; 
-    border-radius: 50%; 
-    position: relative;
-    box-shadow: 0 0 12px #10b981;
-    animation: pulse-status 2s infinite; /* Live heartbeat animation */
-}
-
-/* Pulsing effect to show it's "Live" */
-@keyframes pulse-status {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-}
-
-.system-status span {
-    font-weight: 700;
-    color: #10b981;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.75rem;
-}
-
-/* --- Footer Legal Links --- */
-.footer-legal-links {
+    width: 44px; 
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
     display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
 }
 
-.footer-legal-links a {
-    color: #64748b;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
 }
 
-.footer-legal-links a:hover {
-    color: #ffffff;
-}
+/* =========================================
+   MOBILE RESPONSIVE RULES (Max Width 768px)
+   (Yeh hamesha sabse neeche hona chahiye)
+   ========================================= */
+@media screen and (max-width: 768px) {
 
-/* --- Responsive Layout --- */
-@media (max-width: 768px) {
-    .bottom-flex {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
-    
-    .footer-legal-links {
-        justify-content: center;
-        gap: 15px;
-        order: 2; /* Mobile par links copyright ke niche ayenge */
-    }
-    
-    .system-status {
-        order: 1;
-    }
-}
-/* ==========================================================================
-   8. PREMIUM MOTION & ANIMATION LIBRARY (EXPANDED)
-   ========================================================================== */
+  /* 1. Header ko theek karein (Stack vertically) */
+  .header-container {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 10px;
+  }
+  
+  .nav {
+    display: none; /* Hide standard nav on mobile (need hamburger logic later) */
+  }
 
-/* --- 1. Floating & Organic Motion --- */
-.floating-animation {
-    /* Subtle rotation add karne se motion natural lagti hai */
-    animation: float 6s ease-in-out infinite;
-    will-change: transform; /* Performance optimization */
-}
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    33% { transform: translateY(-15px) rotate(1deg); }
-    66% { transform: translateY(-5px) rotate(-1deg); }
-}
+  /* 2. Hero Section (Text upar, Image neeche) */
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* --- 2. Entrance Effects (For Sections & Cards) --- */
-.reveal-up {
-    animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
+  .hero-title {
+    font-size: 2.5rem;
+  }
 
-@keyframes revealUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(40px) scale(0.98); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); 
-    }
-}
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
 
-/* --- 3. Pulse & Glow (For Buttons/Indicators) --- */
-.pulse-glow {
-    animation: pulseGlow 2s infinite;
-}
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
-}
+  .image-wrapper {
+      margin-top: 30px;
+  }
 
-/* --- 4. Smooth Fade In --- */
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
-}
+  .hero-stats-bar {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+  }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+  /* 3. Articles & Grid (Ek ke neeche ek card) */
+  .articles-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
 
-/* --- 5. Interactive Magnetic Hover --- */
-/* (In CSS this is a subtle lift, full magnetic needs JS) */
-.magnetic-hover {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
+  .article-card {
+    margin-bottom: 20px;
+  }
+  
+  .section-header h2 {
+      font-size: 2rem;
+  }
 
-.magnetic-hover:hover {
-    transform: translateY(-5px) scale(1.03);
-    filter: brightness(1.1);
-}
+  /* 4. Footer (Center align) */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
 
-/* --- 6. Staggered Delay Helpers --- */
-/* In classes ko use karke aap items ko ek ke baad ek reveal kar sakte hain */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-
-/* Performance optimization for mobile */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ==========================================================================
-   9. ADVANCED RESPONSIVE SYSTEM (EXPANDED)
-   ========================================================================== */
-
-/* --- Tablet & Small Laptops (1024px) --- */
-@media (max-width: 1024px) {
-    .hero-wrapper { 
-        flex-direction: column; 
-        text-align: center;
-        gap: 40px; 
-    }
-
-    .hero-content {
-        order: 1; /* Content pehle dikhega */
-    }
-
-    .hero-visual {
-        order: 2;
-        max-width: 80%;
-        margin: 0 auto;
-    }
-
-    .hero-title { 
-        font-size: 3rem; 
-        letter-spacing: -1px;
-    }
-
-    .hero-stats-bar { 
-        margin: 30px auto 0; 
-        justify-content: center;
-    }
-
-    .footer-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 40px;
-    }
-}
-
-/* --- Tablets & Large Phones (768px) --- */
-@media (max-width: 768px) {
-    /* Header optimization for Mobile */
-    .header-container { 
-        padding: 15px 20px;
-        gap: 10px;
-    }
-
-    /* Navigation: Scrollable on mobile without breaking layout */
-    .nav { 
-        display: flex;
-        overflow-x: auto; 
-        width: calc(100% + 40px); 
-        margin: 0 -20px;
-        padding: 5px 20px 15px;
-        scrollbar-width: none; /* Hide scrollbar for clean look */
-        -ms-overflow-style: none;
-    }
-    
-    .nav::-webkit-scrollbar { display: none; } /* Safari/Chrome hide scrollbar */
-
-    .nav a {
-        white-space: nowrap; /* Links wrap nahi honge, scroll honge */
-        font-size: 0.85rem;
-        padding: 8px 15px;
-    }
-
-    .search-bar { 
-        width: 100%; 
-        order: 3; /* Mobile par search ko niche shift karein */
-    }
-
-    .articles-grid {
-        grid-template-columns: 1fr; /* Single column for focus */
-        padding: 0 10px;
-    }
-
-    .footer-grid { 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        gap: 30px;
-    }
-
-    .footer-links h4::after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: var(--primary);
-        margin: 8px auto; /* Centered underline for mobile titles */
-    }
-
-    .social-links { justify-content: center; }
-
-    .newsletter-form { 
-        flex-direction: column; 
-        max-width: 100%;
-    }
-}
-
-/* --- Small Phones (480px) --- */
-@media (max-width: 480px) {
-    .hero-title { 
-        font-size: 2.2rem; 
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .btn {
-        width: 100%; /* Mobile par full-width buttons click karne mein asaan hain */
-        justify-content: center;
-    }
-
-    .header-cta {
-        width: 100%;
-        justify-content: center;
-    }
-
+  .brand-description {
+      margin: 20px auto;
+  }
+  
+  .social-links {
+      justify-content: center;
+  }
+  
+  /* 5. Search Bar on Mobile */
+  .search-bar {
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+  .search-bar:focus-within {
+      width: 100%;
+  }
+  
+  .search-bar input {
+      width: 100%;
+  }
 }
